@@ -80,4 +80,67 @@ while(a > 5) a++; // el cuerpo corre 0 veces
 do{ b++; } while (b > 5); // corre 1 vez
 console.log(a, b); // -> 0 1 
 
+//Break y Continue
+let i = 0;
+const impares = []
+while (true) {
+    i++;
+    if ( i > 10) break; //sale
+    if ( i % 2 === 0) continue; // salta
+    impares.push(i);
+}
+console.log(impares);
+// -> [1,3,5,7,9]
 
+// Ciclos infinitos y como detenerlos
+let x = 0;
+for(let i = 0; i < 10; i++) x += 0.1;
+console.log(x, x === 1); // -> 0.99999999999999 false
+
+// Switch
+function nombreDía(numero){
+
+switch (numero){ 
+case 1:
+    return "Lunes";
+    case 2:
+        return "Martes";
+    case 3:
+        return "Miercoles";
+    case 4:
+        return "Jueves";
+    case 5:
+        return "Viernes";
+    case 6:
+        return "Sabado";
+    case 7:
+        return "Fin de semana";
+    default:
+        return "día invalido";
+
+}
+}
+console.log(nombreDía(2)) // -> Martes
+console.log(nombreDía(7)) // -> fin de semana
+console.log(nombreDía(9)) // día invalido
+
+function ruido(animal){
+    switch(animal){
+        case "perro":
+            console.log("guau"); // sin break
+        case "gato":
+            console.log("miau");
+        case "vaca":
+            console.log("Muuu");
+        case "Pato":
+            console.log("Cuak")
+        case "Pollito":
+            console.log("Pio")
+            break;
+            default:
+                console.log("???");
+    }
+}
+  console.log(ruido("perro"));
+console.log(ruido("gato"));
+console.log(ruido("pez"));
